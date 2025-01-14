@@ -1,0 +1,16 @@
+{
+  "name": "Cloudflared Tunnel for Home Assistant",
+  "description": "Securely expose Home Assistant via Cloudflare Tunnel. Read the documentation for more information.",
+  "documentation": "https://github.com/szymczag/homeassisant-cloudflared/blob/main/README.md",
+  "version": "1.0.1",
+  "slug": "homeassistant-cloudflared",
+  "arch": ["amd64"],
+  "startup": "application",
+  "boot": "auto",
+  "options": {
+    "cloudflare_tunnel_token": ""
+  },
+  "schema": {
+    "cloudflare_tunnel_token": "str"
+  }
+}

@@ -1,0 +1,21 @@
+#!/usr/bin/with-contenv bash
+set -eo pipefail
+
+CONFIG_PATH="/data/options.json"
+CF_TUNNEL_TOKEN="$(jq --raw-output '.cloudflare_tunnel_token' "${CONFIG_PATH}")"
+
+if [ -z "${CF_TUNNEL_TOKEN}" ] || [ "${CF_TUNNEL_TOKEN}" = "null" ]; then
+    echo "********************************************************"
+    echo "ERROR: No Cloudflare Tunnel Token found!"
+    echo ""
+    echo "Please follow these steps to configure the add-on properly:"
+    echo "1. In Cloudflare Zero Trust, create a tunnel and add a Public Hostname."
+    echo "2. Point that hostname to 'http://homeassistant:8123' (or an alternative address)."
+    echo "3. Click 'Install connector' and copy the token from the command after '--token'."
+    echo "4. Paste it into this add-on's configuration, then restart the add-on."
+    echo "********************************************************"
+    exit 1
+fi
+
+echo "Starting Cloudflare Tunnel (ephemeral token)..."
+exec cloudflared tunnel --no-autoupdate run --token "${CF_TUNNEL_TOKEN}"
