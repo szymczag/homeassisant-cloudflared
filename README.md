@@ -56,6 +56,16 @@ Check out our [CHANGELOG.md](CHANGELOG.md) for details on each release.
 - **Issues**: Please open a [GitHub Issue](https://github.com/szymczag/homeassisant-cloudflared/issues) for bug reports or feature requests.  
 - **Pull Requests**: Fork the repository and open a PR with a clear description of changes. I welcome contributions, but they must be reviewed before merging.
 
+Before that, please test it locally and ensure it works as expected.
+```
+docker build -t cloudflared-test .
+docker run --rm -e CLOUDFLARE_TUNNEL_TOKEN="xxx" cloudflared-test
+```
+and then:
+```
+ha addons validate .
+```
+
 ---
 
 ## License
