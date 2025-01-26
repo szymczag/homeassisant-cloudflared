@@ -46,6 +46,25 @@ You can access Home Assistant externally via `https://ha.example.com` (or whatev
 
 ---
 
+## Configuration Changes Required in configuration.yaml :wrench:
+To ensure proper operation with Cloudflare Tunnel, you must add the following settings to your Home Assistant `configuration.yaml` file:
+```
+http:
+  ip_ban_enabled: true
+  trusted_proxies:
+    - 172.30.33.0/24
+  cors_allowed_origins:
+    - https://your-local-ha-url
+    - https://your-cloudflare-url
+```
+Replace `https://your-local-ha-url` with your local Home Assistant URL (e.g., `https://homeassistant.local:8123`) and `https://your-cloudflare-url` with your Cloudflare Tunnel URL (e.g., `https://ha.example.com`). Check the `trusted_proxies` IP range if it matches your Home Assistant Supervisor network.
+
+### Explanation of Each Setting:
+- `ip_ban_enabled: true` → Enables automatic banning of malicious IP addresses.
+- `trusted_proxies` → Allows Cloudflare Tunnel (running in the Home Assistant add-on environment) to act as a trusted reverse proxy.
+- `cors_allowed_origins` → Specifies the URLs that are allowed to interact with Home Assistant through the browser.
+
+
 ## Changelog :scroll:
 Check out our [CHANGELOG.md](CHANGELOG.md) for details on each release.  
 (Or view all releases and tags on the [GitHub Releases][release-link].)
