@@ -2,7 +2,7 @@
 set -eo pipefail
 
 CONFIG_PATH="/data/options.json"
-CF_TUNNEL_TOKEN="$(jq --raw-output '.cloudflare_tunnel_token' "${CONFIG_PATH}")"
+CF_TUNNEL_TOKEN="${CLOUDFLARE_TUNNEL_TOKEN}"
 
 if [ -z "${CF_TUNNEL_TOKEN}" ] || [ "${CF_TUNNEL_TOKEN}" = "null" ]; then
     echo "********************************************************"

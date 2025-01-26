@@ -7,10 +7,9 @@
   "arch": ["amd64", "arm", "arm64", "aarch64"]
   "startup": "application",
   "boot": "auto",
-  "options": {
-    "cloudflare_tunnel_token": ""
-  },
-  "schema": {
-    "cloudflare_tunnel_token": "str"
+  "options": {},
+  "schema": {},
+  "environment": {
+    "CLOUDFLARE_TUNNEL_TOKEN": "str"
   }
 }
