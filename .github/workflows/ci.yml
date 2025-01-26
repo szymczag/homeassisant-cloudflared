@@ -13,6 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install Hadolint (Dockerfile Linter)
+        run: |
+          wget -O /usr/local/bin/hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+          chmod +x /usr/local/bin/hadolint
+
       - name: Validate `config.json` Exists
         run: |
           if [ -f "homeassistant-cloudflared/config.json" ]; then
@@ -34,7 +39,7 @@ jobs:
 
       - name: Lint Dockerfile
         run: |
-          hadolint homeassistant-cloudflared/Dockerfile || exit 1
+          hadolint homeassistant-cloudflared/Dockerfile
 
       - name: Build Add-on Docker Image
         run: |
