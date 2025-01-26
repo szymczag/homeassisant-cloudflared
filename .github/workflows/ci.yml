@@ -16,18 +16,24 @@ jobs:
       - name: Change to Add-on Directory
         run: cd homeassistant-cloudflared || exit 1
 
-      - name: Validate Add-on Configuration
+      - name: Validate `config.json` Exists
         run: |
           if [ -f "homeassistant-cloudflared/config.json" ]; then
-            echo "✅ config.json exists"
+            echo "✅ config.json found"
           else
             echo "❌ ERROR: config.json is missing"
             exit 1
           fi
 
-      - name: Check JSON Syntax
+      - name: Validate JSON Syntax
         run: |
-          jq empty homeassistant-cloudflared/config.json || (echo "❌ ERROR: config.json is not valid JSON" && exit 1)
+          cat homeassistant-cloudflared/config.json | jq . > /dev/null
+          if [ $? -ne 0 ]; then
+            echo "❌ ERROR: config.json contains invalid JSON syntax!"
+            exit 1
+          else
+            echo "✅ config.json syntax is valid"
+          fi
 
       - name: Build Add-on Docker Image
         run: |
