@@ -27,4 +27,9 @@ jobs:
 
       - name: Check JSON Syntax
         run: |
-          jq empty homeassistant-cloudflar
+          jq empty homeassistant-cloudflared/config.json || (echo "❌ ERROR: config.json is not valid JSON" && exit 1)
+
+      - name: Build Add-on Docker Image
+        run: |
+          cd homeassistant-cloudflared
+          docker build -t ha-addon-test .
