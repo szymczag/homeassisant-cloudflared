@@ -1,0 +1,17 @@
+name: Validate Home Assistant Add-on
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Validate Home Assistant Add-on
+        run: |
+          docker run --rm homeassistant/amd64-builder ha-addon validate .
