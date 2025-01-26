@@ -4,7 +4,7 @@ FROM ${BUILD_FROM}
 
 # ---- Define build-time args (defaults can be overridden) ----
 ARG CF_VERSION=2025.1.0
-ARG CF_ARCH=amd64
+ARG CF_ARCH
 ARG CF_URL=https://github.com/cloudflare/cloudflared/releases/download
 
 # ---- Install cloudflared

@@ -4,7 +4,7 @@
   "documentation": "https://github.com/szymczag/homeassisant-cloudflared/blob/main/README.md",
   "version": "1.0.1",
   "slug": "homeassistant-cloudflared",
-  "arch": ["amd64"],
+  "arch": ["amd64", "arm", "arm64", "aarch64"]
   "startup": "application",
   "boot": "auto",
   "options": {
