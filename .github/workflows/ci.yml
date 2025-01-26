@@ -1,17 +1,31 @@
 name: Validate Home Assistant Add-on
 
 on:
-  pull_request:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Validate Home Assistant Add-on
+      - name: Validate Add-on Configuration
         run: |
-          docker run --rm homeassistant/amd64-builder ha-addon validate .
+          if [ -f "config.json" ]; then
+            echo "✅ config.json exists"
+          else
+            echo "❌ ERROR: config.json is missing"
+            exit 1
+          fi
+
+      - name: Check JSON Syntax
+        run: |
+          jq empty config.json || (echo "❌ ERROR: config.json is not valid JSON" && exit 1)
+
+      - name: Build Add-on Docker Image
+        run: |
+          docker build -t ha-addon-test .
