@@ -3,6 +3,7 @@
 [![Release][release-badge]][release-link]
 [![License: MIT][license-badge]][license-link]
 [![Changelog][changelog-badge]][changelog-link]
+[![CI/CD Status](https://github.com/szymczag/homeassisant-cloudflared/actions/workflows/ci.yml/badge.svg)](https://github.com/szymczag/homeassisant-cloudflared/actions)
 
 Securely expose your Home Assistant instance via **Cloudflare Tunnel**—no port forwarding, no extra SSL configurations! This add-on handles the Cloudflare connector automatically once you provide an ephemeral tunnel token from [Cloudflare Zero Trust](https://dash.teams.cloudflare.com/).
 
@@ -98,6 +99,15 @@ See the [LICENSE](LICENSE) file for details.
 - GitHub: [github.com/szymczag](https://github.com/szymczag/homeassisant-cloudflared)
 
 ---
+
+## Continuous Integration (CI/CD)
+This add-on uses GitHub Actions to automatically validate every commit and pull request.
+The CI/CD pipeline ensures that:
+
+- `config.json` is present and has valid JSON syntax.
+- The `Dockerfile` passes linting (`hadolint`).
+- The add-on builds correctly.
+- A test run of the container succeeds.
 
 [release-badge]: https://img.shields.io/github/v/release/szymczag/homeassisant-cloudflared.svg?logo=github
 [release-link]: https://github.com/szymczag/homeassisant-cloudflared/releases
