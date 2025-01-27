@@ -3,7 +3,7 @@
 [![Release][release-badge]][release-link]
 [![License: MIT][license-badge]][license-link]
 [![Changelog][changelog-badge]][changelog-link]
-[![CI/CD Status](https://github.com/szymczag/homeassisant-cloudflared/actions/workflows/ci.yml/badge.svg)](https://github.com/szymczag/homeassisant-cloudflared/actions)
+[![CI/CD Status](https://github.com/szymczag/homeassistant-cloudflared/actions/workflows/ci.yml/badge.svg)](https://github.com/szymczag/homeassisant-cloudflared/actions)
 
 Securely expose your Home Assistant instance via **Cloudflare Tunnel**—no port forwarding, no extra SSL configurations! This add-on handles the Cloudflare connector automatically once you provide an ephemeral tunnel token from [Cloudflare Zero Trust](https://dash.teams.cloudflare.com/).
 
@@ -22,7 +22,7 @@ Securely expose your Home Assistant instance via **Cloudflare Tunnel**—no port
    - In Home Assistant, go to **Settings → Add-ons → Add-on Store**.  
    - Click the **3-dot menu** in the top right → **Repositories** → paste:  
      ```
-     https://github.com/szymczag/homeassisant-cloudflared
+     https://github.com/szymczag/homeassistant-cloudflared
      ```
    - Click **Add**.  
 2. **Install the add-on**:  
@@ -73,7 +73,7 @@ Check out our [CHANGELOG.md](CHANGELOG.md) for details on each release.
 ---
 
 ## Contributing :handshake:
-- **Issues**: Please open a [GitHub Issue](https://github.com/szymczag/homeassisant-cloudflared/issues) for bug reports or feature requests.  
+- **Issues**: Please open a [GitHub Issue](https://github.com/szymczag/homeassistant-cloudflared/issues) for bug reports or feature requests.  
 - **Pull Requests**: Fork the repository and open a PR with a clear description of changes. I welcome contributions, but they must be reviewed before merging.
 
 Before that, please test it locally and ensure it works as expected.
@@ -96,7 +96,7 @@ See the [LICENSE](LICENSE) file for details.
 
 ## Author :writing_hand:
 **@szymczag**  
-- GitHub: [github.com/szymczag](https://github.com/szymczag/homeassisant-cloudflared)
+- GitHub: [github.com/szymczag](https://github.com/szymczag/homeassistant-cloudflared)
 
 ---
 
@@ -109,11 +109,11 @@ The CI/CD pipeline ensures that:
 - The add-on builds correctly.
 - A test run of the container succeeds.
 
-[release-badge]: https://img.shields.io/github/v/release/szymczag/homeassisant-cloudflared.svg?logo=github
-[release-link]: https://github.com/szymczag/homeassisant-cloudflared/releases
+[release-badge]: https://img.shields.io/github/v/release/szymczag/homeassistant-cloudflared.svg?logo=github
+[release-link]: https://github.com/szymczag/homeassistant-cloudflared/releases
 
-[license-badge]: https://img.shields.io/github/license/szymczag/homeassisant-cloudflared?color=blue
-[license-link]: https://github.com/szymczag/homeassisant-cloudflared/blob/main/LICENSE
+[license-badge]: https://img.shields.io/github/license/szymczag/homeassistant-cloudflared?color=blue
+[license-link]: https://github.com/szymczag/homeassistant-cloudflared/blob/main/LICENSE
 
 [changelog-badge]: https://img.shields.io/badge/changelog-click%20here-blue
-[changelog-link]: https://github.com/szymczag/homeassisant-cloudflared/blob/main/CHANGELOG.md
+[changelog-link]: https://github.com/szymczag/homeassistant-cloudflared/blob/main/CHANGELOG.md

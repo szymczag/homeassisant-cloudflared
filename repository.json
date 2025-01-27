@@ -2,7 +2,7 @@
     "name": "@szymczag Home Assistant Add-ons",
     "description": "Add-On for exposing Home Assistant securely using Cloudflare Tunnel.",
     "slug": "szymczag-ha-plugins",
-    "url": "https://github.com/szymczag/homeassisant-cloudflared",
+    "url": "https://github.com/szymczag/homeassistant-cloudflared",
     "homeassistant": "2023.1.0",
     "arch": ["amd64"]
 }
